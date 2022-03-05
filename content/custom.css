@@ -1,5 +1,5 @@
 /* Custom CSS */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap');
 body{
     font-family: 'Work Sans', sans-serif !important;
 }
@@ -17,7 +17,7 @@ body{
   }
   .textLogo {
     line-height: .9;
-    font-weight: bold;
+    font-weight: 600;
     display: inline-block;
     border: 10px solid #fff;
     padding: 30px;
