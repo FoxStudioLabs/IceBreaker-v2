@@ -1,0 +1,32 @@
+/* Custom CSS */
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+body{
+    font-family: 'Alata', sans-serif !important;
+}
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background: rgb(26,26,26);
+    background: -moz-linear-gradient(180deg, rgba(26,26,26,1) 0%, rgba(78,0,147,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(26,26,26,1) 0%, rgba(78,0,147,1) 100%);
+    background: linear-gradient(180deg, rgba(26,26,26,1) 0%, rgba(78,0,147,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a1a1a",endColorstr="#4e0093",GradientType=1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .textLogo {
+    line-height: .9;
+    font-weight: bold;
+    display: inline-block;
+    border: 10px solid #fff;
+    padding: 30px;
+  }
+  @media (min-width: 992px) {
+  .border-right {
+    border-right: 1px solid #ddd;
+}
+.border-left {
+    border-left: 1px solid #ddd;
+}
+}
