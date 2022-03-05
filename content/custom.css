@@ -1,7 +1,7 @@
 /* Custom CSS */
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 body{
-    font-family: 'Alata', sans-serif !important;
+    font-family: 'Work Sans', sans-serif !important;
 }
 .masthead {
     height: 100vh;
