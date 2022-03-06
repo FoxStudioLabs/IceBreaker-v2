@@ -10,9 +10,7 @@
     <link href="content/custom.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="content/favicon/favicon.svg">
     <link rel="icon" type="image/png" href="content/favicon/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/content/icons/all.css">
     <!-- Primary Meta Tags -->
 <title>ICEBREAKER.PW</title>
 <meta name="title" content="ICEBREAKER.PW">
@@ -37,7 +35,7 @@
 <body class="bg-primary">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand typewriter" href="#"><img src="content/logo-min.svg" alt="logo" style="width:auto"
+            <a class="navbar-brand typewriter" href="#"><img src="content/branding/logo-min.svg" alt="logo" style="width:auto"
                     height="52px" /><span>ICEBREAKER</span></a>
         </div>
     </nav>
@@ -47,11 +45,35 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
                     <h1 class="text-white display-1 textLogo">ICEBREAKER</h1>
+                    <div class="py-5"></div>
+                    <a href="#content" class="text-white ">
+                        <svg
+                        width="55"
+                        height="55"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.75732 8.46448L9.17154 7.05026L12 9.87869L14.8284 7.05029L16.2426 8.46451L12 12.7071L7.75732 8.46448Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M9.17154 11.2929L7.75732 12.7071L11.9999 16.9498L16.2426 12.7071L14.8284 11.2929L12 14.1213L9.17154 11.2929Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                          fill="currentColor"
+                        />
+                      </svg></a>
                 </div>
             </div>
         </div>
     </header>
-    <section class="container py-1">
+    <section class="container py-1" id="content">
         <h2 class="text-white display-3 text-uppercase">Contact</h2>
         <div class="row">
             <div class="col-sm-6 col-lg-4 border-right py-2">
@@ -87,6 +109,21 @@
             </div>
         </div>
     </section>
+    <button class="toTopBtn btn btn-sm btn-outline-light" id="toTopBtn" title="Go to top">
+        <svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M5 16.929L6.41421 18.3432L12.0711 12.6863L17.7279 18.3432L19.1421 16.929L12.0711 9.85789L5 16.929Z"
+    fill="currentColor"
+  />
+  <path d="M19 8H5V6H19V8Z" fill="currentColor" />
+</svg>
+    </button>
     <footer class="container-fluid py-5 bg-black">
         <p class="text-center text-white">Copyright &copy; 2022 Icebreaker.pw &#92; Design by <a href="https://www.foxstudio.nl" class="text-white">FoxStudio Webdevelopment</a></p>
     </footer>
@@ -99,9 +136,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"
         integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
-        integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             var settings1 = {
@@ -149,6 +183,21 @@
                     console.log("An error occured while checking the server with ID 2. The Server or API returned NULL");
                     console.groupEnd();
                 }
+            });
+            $(document).ready( function() {
+                window.onscroll = function(){ scrollFunction()}
+            function scrollFunction() {
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    $("#toTopBtn").fadeIn(200);
+                } 
+                else {
+                    $("#toTopBtn").fadeOut(150);
+                }
+            }
+            $("#toTopBtn").click( function (){
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            });
             });
             console.log('%cCreated by FoxStudio Webdevelopment', 'color: #6d00cc; font-family: "Helvetica Neue"; text-transform: uppercase; font-size: 24px');
         </script>
