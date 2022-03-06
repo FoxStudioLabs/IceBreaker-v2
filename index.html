@@ -78,11 +78,11 @@
         <h2 class="text-white display-3 text-uppercase">Servers</h2>
         <div class="row">
             <div class="col-sm-6 border-right py-2 mb-3">
-                <h3 class="text-white">Server 1 <span id="status2"></span></h3>
+                <h3 class="text-white">Server 1&emsp;<span id="status1"><span style="color: orange";>&#9673; Loading</span></h3>
                 <a href="steam://connect/45.89.127.163:27010"><button class="btn btn-lg btn-outline-info w-100"><i class="fab fa-fw fa-steam"></i>CONNECT WITH STEAM</button></a>
             </div>
             <div class="col-sm-6 py-2">
-                <h3 class="text-white">Server 2 <span id="status2"></span></h3>
+                <h3 class="text-white">Server 2&emsp;<span id="status2"><span style="color: orange";>&#9673; Loading</span></span></h3>
                 <a href="steam://connect/45.89.127.163:27016"><button class="btn btn-lg btn-outline-info w-100"><i class="fab fa-fw fa-steam"></i>CONNECT WITH STEAM</button></a>
             </div>
         </div>
@@ -103,7 +103,55 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
         integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script></script>
+        <script>
+            var settings1 = {
+                "url": "https://fsl-cors-proxy.herokuapp.com/https://api.steampowered.com/ISteamApps/GetServersAtAddress/v0001?addr=45.89.127.163:27010&format=json",
+                "method": "GET",
+                "timeout": 0,
+                "crossDomain": true,
+            };
+
+            $.ajax(settings1).done(function (response) {
+                if(response.response.servers[0]){
+                    $("#status1").fadeOut(200).html(`<span style="color: green";>&#9673; Online</span>`).fadeIn(200);
+                    console.groupCollapsed("[ServerStat] ID 1");
+                    console.info("[ServerStat] Status of server 1. OK");
+                    console.groupEnd();
+                }
+                else{
+                    $("#status1").fadeOut(200).html(`<span style="color: red";>&#9673; Offline</span>`).fadeIn(200);
+                    console.groupCollapsed("[ServerStat] ID 1");
+                    console.log("[ServerStat] Status of server 1. ERROR");
+                    console.log("An error occured while checking the server with ID 1. The Server or API returned NULL");
+                    console.groupEnd();
+                }
+            });
+
+
+            var settings2 = {
+                "url": "https://fsl-cors-proxy.herokuapp.com/https://api.steampowered.com/ISteamApps/GetServersAtAddress/v0001?addr=45.89.127.163:27016&format=json",
+                "method": "GET",
+                "timeout": 0,
+                "crossDomain": true,
+            };
+
+            $.ajax(settings2).done(function (response) {
+                if(response.response.servers[0]){
+                    $("#status2").fadeOut(200).html(`<span style="color: green";>&#9673; Online</span>`).fadeIn(200);
+                    console.groupCollapsed("[ServerStat] ID 2");
+                    console.info("[ServerStat] Status of server 2. OK");
+                    console.groupEnd()
+                }
+                else{
+                    $("#status2").fadeOut(200).html(`<span style="color: red";>&#9673; Offline</span>`).fadeIn(200);
+                    console.groupCollapsed("[ServerStat] ID 2");
+                    console.log("[ServerStat] Status of server 2. ERROR");
+                    console.log("An error occured while checking the server with ID 2. The Server or API returned NULL");
+                    console.groupEnd();
+                }
+            });
+            console.log('%cCreated by FoxStudio Webdevelopment', 'color: #6d00cc; font-family: "Helvetica Neue"; text-transform: uppercase; font-size: 24px');
+        </script>
 </body>
 
 </html>
