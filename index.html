@@ -148,13 +148,13 @@
 
             $.ajax(settings1).done(function (response) {
                 if(response.response.servers[0]){
-                    $("#status1").fadeOut(200).html(`<span style="color: green";>&#9673; Online</span>`).fadeIn(200);
+                    $("#status1").html(`<span style="color: green";>&#9673; Online</span>`);
                     console.groupCollapsed("[ServerStat] ID 1");
                     console.info("[ServerStat] Status of server 1. OK");
                     console.groupEnd();
                 }
                 else{
-                    $("#status1").fadeOut(200).html(`<span style="color: red";>&#9673; Offline</span>`).fadeIn(200);
+                    $("#status1").html(`<span style="color: red";>&#9673; Offline</span>`);
                     console.groupCollapsed("[ServerStat] ID 1");
                     console.log("[ServerStat] Status of server 1. ERROR");
                     console.log("An error occured while checking the server with ID 1. The Server or API returned NULL");
@@ -172,13 +172,13 @@
 
             $.ajax(settings2).done(function (response) {
                 if(response.response.servers[0]){
-                    $("#status2").fadeOut(200).html(`<span style="color: green";>&#9673; Online</span>`).fadeIn(200);
+                    $("#status2").html(`<span style="color: green";>&#9673; Online</span>`);
                     console.groupCollapsed("[ServerStat] ID 2");
                     console.info("[ServerStat] Status of server 2. OK");
                     console.groupEnd()
                 }
                 else{
-                    $("#status2").fadeOut(200).html(`<span style="color: red";>&#9673; Offline</span>`).fadeIn(200);
+                    $("#status2").html(`<span style="color: red";>&#9673; Offline</span>`);
                     console.groupCollapsed("[ServerStat] ID 2");
                     console.log("[ServerStat] Status of server 2. ERROR");
                     console.log("An error occured while checking the server with ID 2. The Server or API returned NULL");
