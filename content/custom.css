@@ -42,3 +42,13 @@ body{
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
+.btn-outline-purple {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.btn-outline-purple:hover{
+  background-color: #6d00cc;
+  border-color: #6d00cc;
+  color: #ffffff;
+}
