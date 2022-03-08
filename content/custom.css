@@ -35,3 +35,10 @@ body{
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
 }
+
+#navbar{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
